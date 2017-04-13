@@ -9,8 +9,8 @@ t2-t1
 variables_included <- vif_train@variables[-which(vif_train@variables %in% vif_train@excluded)]
 variables_excluded <- vif_train@excluded
 
-vif_train2 = vifcor(training_set[,which(colnames(training_set)%in%c(vars_incl2))],th=0.5)
-variables_included2 <- vif_train2@variables[-which(vif_train2@variables %in% vif_train2@excluded)]
+# vif_train2 = vifcor(training_set[,which(colnames(training_set)%in%c(vars_incl2))],th=0.5)
+# variables_included2 <- vif_train2@variables[-which(vif_train2@variables %in% vif_train2@excluded)]
 
 
 

@@ -29,11 +29,15 @@ varrf <- varrf[which(varrf$Percent_Imp>0.5),]
 test_set$pred <-  predict(rf_all,newdata = test_set,type="class")
 accrf11 <- confusionMatrix(test_set$pred,test_set$type,mode="prec_recall")
 
-test_set2$pred <- predicted_vals <- predict(rf_all,newdata = test_set2,type="class")
-accrf12 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+data_test_set$pred <-  predict(rf_all,newdata = data_test_set,type="class")
+accrf11_test <- confusionMatrix(data_test_set$pred,data_test_set$type,mode="prec_recall")
 
-test_set3$pred <- predicted_vals <- predict(rf_all,newdata = test_set3,type="class")
-accrf13 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
+
+# test_set2$pred <- predicted_vals <- predict(rf_all,newdata = test_set2,type="class")
+# accrf12 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+# 
+# test_set3$pred <- predicted_vals <- predict(rf_all,newdata = test_set3,type="class")
+# accrf13 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
 
 #Test with VIF variables
 training_set_vif <- training_set[,which(colnames(training_set)%in%c(variables_included,"type"))]
@@ -60,11 +64,15 @@ varImpPlot(rf_vif)
 test_set$pred <-  predict(rf_vif,newdata = test_set,type="class")
 accrf21 <- confusionMatrix(test_set$pred,test_set$type,mode="prec_recall")
 
-test_set2$pred <- predicted_vals <- predict(rf_vif,newdata = test_set2,type="class")
-accrf22 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+data_test_set$pred <-  predict(rf_vif,newdata = data_test_set,type="class")
+accrf21_test <- confusionMatrix(data_test_set$pred,data_test_set$type,mode="prec_recall")
 
-test_set3$pred <- predicted_vals <- predict(rf_vif,newdata = test_set3,type="class")
-accrf23 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
+
+# test_set2$pred <- predicted_vals <- predict(rf_vif,newdata = test_set2,type="class")
+# accrf22 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+# 
+# test_set3$pred <- predicted_vals <- predict(rf_vif,newdata = test_set3,type="class")
+# accrf23 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
 
 
 #Test with rfFunc vars
@@ -92,11 +100,15 @@ varImpPlot(rf_rf)
 test_set$pred <-  predict(rf_rf,newdata = test_set,type="class")
 accrf31 <- confusionMatrix(test_set$pred,test_set$type,mode="prec_recall")
 
-test_set2$pred <- predicted_vals <- predict(rf_rf,newdata = test_set2,type="class")
-accrf32 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+data_test_set$pred <-  predict(rf_rf,newdata = data_test_set,type="class")
+accrf31_test <- confusionMatrix(data_test_set$pred,data_test_set$type,mode="prec_recall")
 
-test_set3$pred <- predicted_vals <- predict(rf_rf,newdata = test_set3,type="class")
-accrf33 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
+
+# test_set2$pred <- predicted_vals <- predict(rf_rf,newdata = test_set2,type="class")
+# accrf32 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+# 
+# test_set3$pred <- predicted_vals <- predict(rf_rf,newdata = test_set3,type="class")
+# accrf33 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
 
 
 #Test with VIF after rffunc
@@ -126,8 +138,12 @@ varImpPlot(rf_vif2)
 test_set$pred <-  predict(rf_vif2,newdata = test_set,type="class")
 accrf41 <- confusionMatrix(test_set$pred,test_set$type,mode="prec_recall")
 
-test_set2$pred <- predicted_vals <- predict(rf_vif2,newdata = test_set2,type="class")
-accrf42 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
 
-test_set3$pred <- predicted_vals <- predict(rf_vif2,newdata = test_set3,type="class")
-accrf43 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
+data_test_set$pred <-  predict(rf_vif2,newdata = data_test_set,type="class")
+accrf41_test <- confusionMatrix(data_test_set$pred,data_test_set$type,mode="prec_recall")
+
+# test_set2$pred <- predicted_vals <- predict(rf_vif2,newdata = test_set2,type="class")
+# accrf42 <- confusionMatrix(test_set2$pred,test_set2$type,mode="prec_recall")
+# 
+# test_set3$pred <- predicted_vals <- predict(rf_vif2,newdata = test_set3,type="class")
+# accrf43 <- confusionMatrix(test_set3$pred,test_set3$type,mode="prec_recall")
